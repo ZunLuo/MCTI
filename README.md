@@ -1,16 +1,16 @@
 # MCTI
 Monte-Carlo Simulation for Charge Transfer Inefficiency
 # I. installation
-1. requirement: gcc compiler, astropy, numpy, scipy
-2. change $install_path in install.sh
-3. run: bash install.sh
+1. Requirement: gcc compiler, astropy, numpy, scipy
+2. Change $install_path in install.sh
+3. Run: bash install.sh
 # II. usage
 Add "from CTI_modeling_frac import CTI_sim" to your python manuscript.\
 Use function CTI_sim to add CTI to your image.\
 CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
         trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,\
         Tpix,dark_flag_Tdark):
-1. \textbf{Image parameters}\
+1. _Image parameters_\
 (1) image: 2D float64 numpy array\
     Input image with size (ny,nx)\
 (2) nx: int32\
@@ -18,7 +18,7 @@ CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
 (3) ny: int32\
     Row number of the image\
     noverscan: int32, number of parallel overscan pixels\
-2. Trap parameters\
+2. _Trap parameters_\
 (1) nsp: int32\
     Number of trap species\
 (2) rho_trap: float64 numpy array\
@@ -27,7 +27,7 @@ CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
     Trap release timescales (in unit of pix), with the same order as rho_trap\
 3. CCD parameters\
 The volume of the electron cloud V is determined by:\
-$V/V_{\mathrm{max}} = \mathrm{max}{(N/w-c)^{\beta},0}$\
+$V/V_{\mathrm{max}} = \mathrm{max}\{((N/w-c)^{\beta},0\}$\
 where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel\
 (1) beta: float64\
     Power exponent of electron cloud volume \
