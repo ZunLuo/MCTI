@@ -10,28 +10,31 @@ Use function CTI_sim to add CTI to your image.\
 CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
         trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,\
         Tpix,dark_flag_Tdark):
-1. image parameters
+1. image parameters\
 (1) image: 2D float64 numpy array\
-Input image with size (ny,nx)\
+    Input image with size (ny,nx)\
 (2) nx: int32\
-Column number of the image\
+    Column number of the image\
 (3) ny: int32\
-Row number of the image\
-noverscan: int32, number of parallel overscan pixels\
-3. trap parameters
-(1) nsp: int32
-number of trap species
-(2) rho_trap: float64 numpy array
-trap densities
-(3) t: float64 numpy array
-Trap release timescales (in unit of pix), with the same order as rho_trap
-5. CCD parameters
-The volume of the electron cloud V is determined by
-$V/V_{max} = max{(N/w-c)^beta,0}$
-where $V_{max}$ is the maximum volume allowed in a pixel, N is the electron count in the pixel
-beta: float64, power exponent of electron cloud volume 
-w: float64, fullwell capacity
-c: float64, notch channel depth
+    Row number of the image\
+    noverscan: int32, number of parallel overscan pixels\
+2. trap parameters\
+(1) nsp: int32\
+    Number of trap species\
+(2) rho_trap: float64 numpy array\
+    Trap densities\
+(3) t: float64 numpy array\
+    Trap release timescales (in unit of pix), with the same order as rho_trap\
+3. CCD parameters\
+The volume of the electron cloud V is determined by:\
+$V/V_{max} = max{(N/w-c)^beta,0}$\
+where $V_{max}$ is the maximum volume allowed in a pixel, N is the electron count in the pixel\
+(1) beta: float64\
+    power exponent of electron cloud volume \
+(2) w: float64\
+    Fullwell capacity
+(3) c: float64\
+    Notch channel depth
 6. calculation parameters
 nmax: int32, maximum number of traps allowed to be generated in a single pixel
 oversample: int32, number of trap will be multiplied by oversample, while one trap will trap/release 1/oversample electrons
