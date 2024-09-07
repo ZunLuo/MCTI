@@ -5,14 +5,16 @@ Monte-Carlo Simulation for Charge Transfer Inefficiency
 2. Change $install_path in install.sh
 3. Run: bash install.sh
 # Usage
-Add "from CTI_modeling_frac import CTI_sim" to your python manuscript.\
-Use function CTI_sim to add CTI to your image.\
-CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
-        trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,\
-        Tpix,dark_flag_Tdark):
+1. Add "from CTI_modeling_frac import CTI_sim" to your python manuscript.\
+2. Use function CTI_sim to add CTI to your image.\
+# CTI_sim
+_CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,Tpix,dark_flag_Tdark)_
+
+__Parameters__
+
 1. __Image parameters__\
 (1) *image: 2D float64 numpy array*\
-    Input image with size (ny,nx)\
+    Input image with size (*ny*,*nx*)\
    \
 (2) *nx: int32*\
     Column number of the image\
@@ -84,4 +86,7 @@ Set to 1 if the charge injection is from dark current\
 (6) *Tdark: float64, default None*\
 Integration time, injc times Tdark will be added to the input image before CTI is added\
 
+__Return__
+*image_cti: float64 numpy array*
+Output image with CTI and charge injection added with size (*nx*,*ny*+*noverscan*). 
 # See example for a quick start
