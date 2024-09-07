@@ -1,10 +1,10 @@
 # MCTI
 Monte-Carlo Simulation for Charge Transfer Inefficiency
-# I. installation
+# Installation
 1. Requirement: gcc compiler, astropy, numpy, scipy
 2. Change $install_path in install.sh
 3. Run: bash install.sh
-# II. usage
+# Usage
 Add "from CTI_modeling_frac import CTI_sim" to your python manuscript.\
 Use function CTI_sim to add CTI to your image.\
 CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
@@ -27,16 +27,14 @@ CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
 (1) *nsp: int32*\
     Number of trap species\
    \
-(2) rho_trap: float64 numpy array\
+(2) *rho_trap: float64 numpy array*\
     Trap densities\
    \
-(3) t: float64 numpy array\
+(3) *t: float64 numpy array*\
     Trap release timescales (in unit of pix), with the same order as rho_trap\
    
 3. __CCD parameters__\
-The volume of the electron cloud V is determined by:\
-$V/V_{\mathrm{max}} = \mathrm{max}\{((N/w-c)^{\beta},0\}$\
-where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel\
+The volume of the electron cloud V is determined by: $V/V_{\mathrm{max}} = \mathrm{max}(((N/w-c)^{\beta},0)$, where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel.\
 (1) *beta: float64*\
     Power exponent of electron cloud volume \
    \
@@ -86,4 +84,4 @@ Set to 1 if the charge injection is from dark current\
 (6) *Tdark: float64, default None*\
 Integration time, injc times Tdark will be added to the input image before CTI is added\
 
-# III. See example for a quick start
+# See example for a quick start
