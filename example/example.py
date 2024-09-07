@@ -16,12 +16,12 @@ if __name__ =='__main__':
     dark_flag = 1
     Tpix,Tdark = 0.03,100
     #Read input image
-    image = fits.getdata("input/demo.fits").astype(np.float64)
+    image = fits.getdata("./demo.fits").astype(np.float64)
     #Read charge injection map
-    injc = fits.getdata("input/demo_darkc.fits").astype(np.float64)
+    injc = fits.getdata("./demo_darkc.fits").astype(np.float64)
     #Run MCTI
     image_cti = CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,\
             w,c,nmax,oversample,trap_seeds,release_seed,cap_prob,cap_seed,\
             inj_flag,inj_seed,injc,Tpix,dark_flag,Tdark)  
     #Write output image to FITS file
-    fits.writeto("output/demo_CTI_dark_inj.fits",data=image_cti,overwrite=True)
+    fits.writeto("./demo_CTI_dark_inj.fits",data=image_cti,overwrite=True)
