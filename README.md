@@ -13,19 +13,22 @@ CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
 1. __Image parameters__\
 (1) *image: 2D float64 numpy array*\
     Input image with size (ny,nx)\
+   \
 (2) *nx: int32*\
     Column number of the image\
+   \
 (3) *ny: int32*\
     Row number of the image\
     noverscan: int32, number of parallel overscan pixels\
-2. __Trap parameters__\
+   \
+3. __Trap parameters__\
 (1) *nsp: int32*\
     Number of trap species\
 (2) rho_trap: float64 numpy array\
     Trap densities\
 (3) t: float64 numpy array\
     Trap release timescales (in unit of pix), with the same order as rho_trap\
-3. __CCD parameters__\
+4. __CCD parameters__\
 The volume of the electron cloud V is determined by:\
 $V/V_{\mathrm{max}} = \mathrm{max}\{((N/w-c)^{\beta},0\}$\
 where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel\
