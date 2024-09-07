@@ -1,10 +1,10 @@
 # MCTI
 Monte-Carlo Simulation for Charge Transfer Inefficiency
-I. installation
+# I. installation
 1. requirement: gcc compiler, astropy, numpy, scipy
 2. change $install_path in install.sh
 3. run: bash install.sh
-II. usage
+# II. usage
 add "from CTI_modeling_frac import CTI_sim" to your python manuscript
 CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
         trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,\
@@ -41,4 +41,4 @@ injc: 2D float64 numpy array, default None, with the same size as image, charge 
 Tpix: float64, default None, dwell time, injc*Tpix is the number of charge injected to each pixel in a transfer
 dark_flag: int32 default 0, set to 1 if the charge injection is from dark current
 Tdark: float64, default None, integration time, injc*Tdark will be added to the input image before CTI is added
-III. See example for a quick start
+# III. See example for a quick start
