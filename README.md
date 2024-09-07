@@ -36,7 +36,7 @@ __Parameters__
     Trap release timescales (in unit of pix), with the same order as rho_trap
    
 3. __CCD parameters__\
-The volume of the electron cloud V is determined by: $V/V_{\mathrm{max}} = \mathrm{max}(((N/w-c)^{\beta},0)$, where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel.\
+The volume of the electron cloud V is determined by: $V/V_{\mathrm{max}} = \mathrm{max}((N/w-c)^{\beta},0)$, where $V_{\mathrm{max}}$ is the maximum volume allowed in a pixel, $N$ is the electron count in the pixel.\
 (1) *beta: float64*\
     Power exponent of electron cloud volume \
    \
@@ -89,5 +89,5 @@ Integration time, injc times Tdark will be added to the input image before CTI i
 __Return__
 
 *image_cti: float64 numpy array*\
-Output image with CTI and charge injection added with size (*nx*,*ny*+*noverscan*). 
+Output image with CTI and charge injection added with size (*ny*+*noverscan*,*nx*). 
 # See example for a quick start
