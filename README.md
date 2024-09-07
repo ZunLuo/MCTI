@@ -5,18 +5,19 @@ Monte-Carlo Simulation for Charge Transfer Inefficiency
 2. change $install_path in install.sh
 3. run: bash install.sh
 # II. usage
-add "from CTI_modeling_frac import CTI_sim" to your python manuscript
+Add "from CTI_modeling_frac import CTI_sim" to your python manuscript.\
+Use function CTI_sim to add CTI to your image.\
 CTI_sim(image,nx,ny,noverscan,nsp,rho_trap,t,beta,w,c,nmax,oversample,\
         trap_seeds,release_seed,cap_prob,cap_seed,inj_flag,inj_seed,injc,\
         Tpix,dark_flag_Tdark):
 1. image parameters
-(1) image: 2D float64 numpy array
-Input image with size (ny,nx)
-(2) nx: int32
-Column number of the image
-(3) ny: int32
-Row number of the image
-noverscan: int32, number of parallel overscan pixels
+(1) image: 2D float64 numpy array\
+Input image with size (ny,nx)\
+(2) nx: int32\
+Column number of the image\
+(3) ny: int32\
+Row number of the image\
+noverscan: int32, number of parallel overscan pixels\
 3. trap parameters
 (1) nsp: int32
 number of trap species
